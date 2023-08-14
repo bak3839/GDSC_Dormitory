@@ -14,6 +14,7 @@ public class DetailRepository {
     private EntityManager em;
 
     public void save(Detail detail) {
+        System.out.println(detail.getWakeup());
         em.persist(detail);
     }
 

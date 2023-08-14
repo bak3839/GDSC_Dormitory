@@ -12,17 +12,19 @@ public class Detail {
     @Id
     @Column(name = "member_id")
     private Long id;
-
-    @OneToOne(fetch = FetchType.LAZY)
     @MapsId
+    @OneToOne
     @JoinColumn(name = "member_id")
     private Member member;
     private String habits;
     private String outing;
     private String prefer;
-    private int sleep;
-    private int wakeup;
-    private int cleaning;
-    private boolean exp;
+    @Enumerated(EnumType.STRING)
+    private Sleep sleep;
+    @Enumerated(EnumType.STRING)
+    private WakeUp wakeup;
+    @Enumerated(EnumType.STRING)
+    private Cleaning cleaning;
+    private int exp;
     private boolean smoking;
 }

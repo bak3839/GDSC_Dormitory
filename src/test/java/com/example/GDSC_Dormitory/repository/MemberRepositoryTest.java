@@ -15,6 +15,7 @@ import static org.junit.Assert.*;
 @SpringBootTest
 public class MemberRepositoryTest {
     @Autowired MemberRepository memberRepository;
+    @Autowired DetailRepository detailRepository;
 
     @Test
     @Transactional
@@ -34,4 +35,5 @@ public class MemberRepositoryTest {
         Assertions.assertThat(findMember.getId()).isEqualTo(member.getId());
         Assertions.assertThat(findMember).isEqualTo(member);
     }
+
 }
