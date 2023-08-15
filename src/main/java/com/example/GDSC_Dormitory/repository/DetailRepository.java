@@ -14,11 +14,15 @@ public class DetailRepository {
     private EntityManager em;
 
     public void save(Detail detail) {
-        System.out.println(detail.getWakeup());
         em.persist(detail);
     }
 
     public Detail findOne(Long id) {
         return em.find(Detail.class, id);
+    }
+
+    public List<Detail> findAll(Long id) {
+        return em.createQuery("select d from Detail d", Detail.class)
+                .getResultList();
     }
 }

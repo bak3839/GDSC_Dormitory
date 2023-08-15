@@ -22,7 +22,6 @@ public class DetailController {
     public ResponseEntity<String> addDetail(@RequestBody DetailForm form) {
         Detail detail = new Detail();
         Member member = detailService.findMemberId(form.getNickname());
-        System.out.println(member.getId());
 
         detail.setMember(member);
         detail.setHabits(form.getHabits());

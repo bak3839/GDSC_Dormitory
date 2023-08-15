@@ -1,5 +1,6 @@
 package com.example.GDSC_Dormitory.repository;
 
+import com.example.GDSC_Dormitory.domain.Match;
 import com.example.GDSC_Dormitory.domain.Member;
 import org.springframework.stereotype.Repository;
 
@@ -32,4 +33,6 @@ public class MemberRepository {
                 .setParameter("email", email)
                 .getResultList();
     }
+
+
 }
