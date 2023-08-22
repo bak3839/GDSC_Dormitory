@@ -16,4 +16,6 @@ public class Member {
     private String email;
     private String major;
     private int gender;
+    private int exp;
+    private boolean smoking;
 }

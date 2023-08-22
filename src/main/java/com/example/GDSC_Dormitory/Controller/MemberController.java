@@ -25,6 +25,8 @@ public class MemberController {
         member.setGender(form.getGender());
         member.setEmail(form.getEmail());
         member.setMajor(form.getMajor());
+        member.setExp(form.getExp());
+        member.setSmoking(form.isSmoking());
 
         memberService.join(member);
         return ResponseEntity.ok().body("성공");

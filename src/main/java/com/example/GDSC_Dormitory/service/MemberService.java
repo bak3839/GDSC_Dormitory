@@ -24,6 +24,14 @@ public class MemberService {
         return memberRepository.findByNickname(nickname);
     }
 
+    public Member findOne(Long id) {
+        return memberRepository.findOne(id);
+    }
+
+    public List<Member> findAll() {
+        return memberRepository.findAll();
+    }
+
     /*public ResponseEntity<String> validateDuplicateNickname(String nickname) {
         List<Member> findMembers = memberRepository.findByNickname(nickname);
 

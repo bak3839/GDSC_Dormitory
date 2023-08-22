@@ -27,4 +27,8 @@ public class DetailService {
         List<Member> findMembers = memberRepository.findByNickname(nickname);
         return findMembers.get(0);
     }
+
+    public List<Detail> findAll() {
+        return detailRepository.findAll();
+    }
 }

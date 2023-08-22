@@ -14,15 +14,21 @@ public class RegisterForm {
     private String major;
     private String nickname;
     private int gender;
+    private int exp;
+    private boolean smoking;
 
     @JsonCreator
     public RegisterForm(@JsonProperty("email") String email,
                         @JsonProperty("major") String major,
                         @JsonProperty("nickname") String nickname,
-                        @JsonProperty("gander") int gender) {
+                        @JsonProperty("gander") int gender,
+                        @JsonProperty("exp") int exp,
+                        @JsonProperty("smoking") boolean smoking) {
         this.email = email;
         this.major = major;
         this.nickname = nickname;
         this.gender = gender;
+        this.exp = exp;
+        this.smoking = smoking;
     }
 }

@@ -26,7 +26,7 @@ public class MatchService {
     public void score(Long id) {
         Detail myDetail = detailRepository.findOne(id);
 
-        List<Detail> findOtherDetail = detailRepository.findAll(id);
+        List<Detail> findOtherDetail = detailRepository.findAll();
 
         System.out.println(findOtherDetail.size());
 

@@ -21,7 +21,7 @@ public class DetailRepository {
         return em.find(Detail.class, id);
     }
 
-    public List<Detail> findAll(Long id) {
+    public List<Detail> findAll() {
         return em.createQuery("select d from Detail d", Detail.class)
                 .getResultList();
     }

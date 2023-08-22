@@ -25,6 +25,4 @@ public class Detail {
     private WakeUp wakeup;
     @Enumerated(EnumType.STRING)
     private Cleaning cleaning;
-    private int exp;
-    private boolean smoking;
 }

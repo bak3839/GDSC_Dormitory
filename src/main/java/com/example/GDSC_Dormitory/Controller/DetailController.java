@@ -30,8 +30,6 @@ public class DetailController {
         detail.setSleep(form.getSleep());
         detail.setWakeup(form.getWakeup());
         detail.setCleaning(form.getCleaning());
-        detail.setExp(form.getExp());
-        detail.setSmoking(form.isSmoking());
 
         detailService.join(detail);
 
