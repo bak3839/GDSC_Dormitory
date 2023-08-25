@@ -1,11 +1,13 @@
 package com.example.GDSC_Dormitory.service;
 
+import com.example.GDSC_Dormitory.domain.Member;
 import com.example.GDSC_Dormitory.domain.Savelist;
 import com.example.GDSC_Dormitory.repository.SavelistRepository;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
+import java.util.ArrayList;
 import java.util.List;
 
 @Service
@@ -20,11 +22,15 @@ public class SavelistService {
         savelistRepository.save(savelist);
     }
 
-    public List<Savelist> findMyList(Long id){
+    public List<Long> findIdList(Long id) {
+        return savelistRepository.findIdList(id);
+    }
+
+    public List<Member> findMyList(Long id){
         return savelistRepository.findMyList(id);
     }
 
-    public List<Savelist> findOtherList(Long id){
+    public List<Member> findOtherList(Long id){
         return savelistRepository.findOtherList(id);
     }
 }

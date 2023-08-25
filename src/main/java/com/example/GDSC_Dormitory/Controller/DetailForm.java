@@ -19,7 +19,9 @@ public class DetailForm {
     private String prefer;
     private Sleep sleep;
     private WakeUp wakeup;
-    private Cleaning cleaning;;
+    private Cleaning cleaning;
+    private String home;
+    private String ear;
 
     @JsonCreator
     public DetailForm(@JsonProperty("nickname") String nickname,
@@ -28,13 +30,17 @@ public class DetailForm {
                       @JsonProperty("prefer") String prefer,
                       @JsonProperty("sleep") Sleep sleep,
                       @JsonProperty("wakeup") WakeUp wakeup,
-                      @JsonProperty("cleaning") Cleaning cleaning){
-        this.nickname =  nickname;
+                      @JsonProperty("cleaning") Cleaning cleaning,
+                      @JsonProperty("home") String home,
+                      @JsonProperty("ear") String ear){
+        this.nickname = nickname;
         this.habits = habits;
         this.outing = outing;
         this.prefer = prefer;
         this.sleep = sleep;
         this.wakeup = wakeup;
         this.cleaning = cleaning;
+        this.home = home;
+        this.ear = ear;
     }
 }

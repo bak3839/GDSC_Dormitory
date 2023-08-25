@@ -1,5 +1,6 @@
 package com.example.GDSC_Dormitory.Controller;
 
+import com.example.GDSC_Dormitory.domain.Member;
 import com.example.GDSC_Dormitory.domain.Savelist;
 import com.example.GDSC_Dormitory.service.MemberService;
 import com.example.GDSC_Dormitory.service.SavelistService;
@@ -33,13 +34,18 @@ public class SavelistController {
         return ResponseEntity.ok().body("저장");
     }
 
+    @GetMapping("/userIdList")
+    public ResponseEntity<List<Long>> idList(Long id) {
+        return ResponseEntity.ok().body(savelistService.findIdList(id));
+    }
+
     @GetMapping("/myList")
-    public ResponseEntity<List<Savelist>> showMy(@RequestParam Long id) {
+    public ResponseEntity<List<Member>> showMy(Long id) {
         return ResponseEntity.ok().body(savelistService.findMyList(id));
     }
 
     @GetMapping("/otherList")
-    public ResponseEntity<List<Savelist>> showOther(@RequestParam Long id) {
+    public ResponseEntity<List<Member>> showOther(@RequestParam Long id) {
         return ResponseEntity.ok().body(savelistService.findOtherList(id));
     }
 }

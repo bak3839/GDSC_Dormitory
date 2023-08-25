@@ -41,4 +41,14 @@ public class MemberController {
         }
         return ResponseEntity.ok().body("possible");
     }
+
+    @GetMapping("/mypage")
+    public ResponseEntity<Member> myPage(Long id) {
+        return ResponseEntity.ok().body(memberService.findOne(id));
+    }
+
+//    @GetMapping("/mypage/{id}")
+//    public ResponseEntity<Member> myPage(@PathVariable("id") Long id) {
+//        return ResponseEntity.ok().body(memberService.findOne(id));
+//    }
 }

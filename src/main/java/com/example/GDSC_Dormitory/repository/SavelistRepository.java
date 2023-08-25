@@ -1,5 +1,6 @@
 package com.example.GDSC_Dormitory.repository;
 
+import com.example.GDSC_Dormitory.domain.Member;
 import com.example.GDSC_Dormitory.domain.Savelist;
 import org.springframework.stereotype.Repository;
 
@@ -17,14 +18,20 @@ public class SavelistRepository {
         em.persist(savelist);
     }
 
-    public List<Savelist> findMyList(Long id) {
-        return em.createQuery("select s from Savelist s where s.member1.id = :id", Savelist.class)
+    public List<Long> findIdList(Long id) {
+        return em.createQuery("select s.member2.id from Savelist s where s.member1.id = :id", Long.class)
                 .setParameter("id", id)
                 .getResultList();
     }
 
-    public List<Savelist> findOtherList(Long id) {
-        return em.createQuery("select s from Savelist s where s.member2.id = :id", Savelist.class)
+    public List<Member> findMyList(Long id) {
+        return em.createQuery("select s.member2 from Savelist s where s.member1.id = :id", Member.class)
+                .setParameter("id", id)
+                .getResultList();
+    }
+
+    public List<Member> findOtherList(Long id) {
+        return em.createQuery("select s.member1 from Savelist s where s.member2.id = :id", Member.class)
                 .setParameter("id", id)
                 .getResultList();
     }

@@ -19,6 +19,8 @@ public class Detail {
     private String habits;
     private String outing;
     private String prefer;
+    private String home;
+    private String ear;
     @Enumerated(EnumType.STRING)
     private Sleep sleep;
     @Enumerated(EnumType.STRING)

@@ -16,16 +16,10 @@ import java.util.List;
 public class DetailService {
 
     private final DetailRepository detailRepository;
-    private final MemberRepository memberRepository;
 
     @Transactional
     public void join(Detail detail) {
         detailRepository.save(detail);
-    }
-
-    public Member findMemberId(String nickname) {
-        List<Member> findMembers = memberRepository.findByNickname(nickname);
-        return findMembers.get(0);
     }
 
     public List<Detail> findAll() {
